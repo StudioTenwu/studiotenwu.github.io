@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="About StudioTenwu">
     <title>About - StudioTenwu</title>
+    <link rel="preload" as="image" href="black_pixels.jpg">
     <style>
         * {
             margin: 0;
@@ -34,12 +35,19 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.5;
+            opacity: 0;
             z-index: -1;
             transform: scale(1.15) perspective(1000px);
             transition: transform 0.1s ease-out;
             transform-style: preserve-3d;
             will-change: transform;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 0.5;
+            }
         }
 
         .container {
